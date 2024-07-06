@@ -13,6 +13,7 @@ exports.CreateShortUrl = async (req, res) => {
         //console.log("Received URL:", originalUrl); // Debug log
 
         const base = `http://localhost:8000`
+        // const base = `http://localhost:8000/api/v5/urlss`
 
 
         if (!validateUrl(originalUrl)) {

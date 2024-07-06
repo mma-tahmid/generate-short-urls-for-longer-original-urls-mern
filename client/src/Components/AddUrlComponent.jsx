@@ -14,7 +14,7 @@ const AddUrlComponent = () => {
         }
 
         axios
-            .post("http://localhost:8000/api/v5/urlss/create-short-url", { originalUrl: url })
+            .post("/api/v5/urlss/create-short-url", { originalUrl: url })
             .then(res => {
                 console.log(res.data);
             })
@@ -30,18 +30,18 @@ const AddUrlComponent = () => {
         <div>
             <main>
                 <section className="w-100 d-flex flex-column justify-content-center align-items-center">
-                    <h1 className="mb-2 fs-1">URL Shortener</h1>
+                    <h1 className="mb-2 fs-1">URL Shortener Service</h1>
                     <form className="w-50" onSubmit={onSubmit}>
                         <input
                             className="w-100 border border-primary p-2 mb-2 fs-3 h-25"
                             type="text"
-                            placeholder="http://samplesite.com"
+                            placeholder="Enter the long Url"
                             value={url}
                             onChange={e => setUrl(e.target.value)}
                         />
                         <div className="d-grid gap-2 col-6 mx-auto">
-                            <button type="submit" className="btn btn-danger m-5">
-                                Shorten!
+                            <button type="submit" className="btn btn-primary m-5">
+                                Shorten the link
                             </button>
                         </div>
                     </form>
