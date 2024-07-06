@@ -18,7 +18,6 @@ exports.CreateShortUrl = async (req, res) => {
 
         if (!validateUrl(originalUrl)) {
             return res.status(400).send({ message: 'Invalid URL' })
-
         }
 
         // // creating short url 6digit code using short-unique-id package
@@ -33,7 +32,7 @@ exports.CreateShortUrl = async (req, res) => {
         if (existingOriginalUrl) {
             const shortUrl = `${base}/${existingOriginalUrl.urlId}`
             res.status(200).json({ shortUrl: shortUrl, clicks: existingOriginalUrl.clicks })
-            console.log('Url already present', shortUrl)
+            //console.log('Url already present', shortUrl)
             return
         }
 
@@ -56,7 +55,7 @@ exports.CreateShortUrl = async (req, res) => {
     }
 
     catch (error) {
-        console.log(error)
+        //console.log(error)
         res.status(400).json('Something went wrong');
     }
 }
@@ -97,7 +96,7 @@ exports.RedirectOrginalUrl = async (req, res) => {
 
 
     catch (error) {
-        console.log(error)
+        //console.log(error)
         res.status(500).json('Error While Redirect to Original Url')
     }
 }

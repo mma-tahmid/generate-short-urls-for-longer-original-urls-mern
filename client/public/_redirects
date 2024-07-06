@@ -1,0 +1,3 @@
+/api/*  https://generate-short-urls-for-longer-original.onrender.com/api/:splat  200
+
+/*    /index.html   200

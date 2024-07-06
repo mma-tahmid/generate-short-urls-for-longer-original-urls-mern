@@ -13,7 +13,7 @@ const AddUrlComponent = () => {
             return;
         }
 
-        axios
+         axios
             .post("/api/v5/urlss/create-short-url", { originalUrl: url })
             .then(res => {
                 console.log(res.data);
@@ -24,7 +24,7 @@ const AddUrlComponent = () => {
 
         setUrl("")
     }
-    console.log(url)
+    //console.log(url)
 
     return (
         <div>

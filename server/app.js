@@ -49,15 +49,15 @@ app.use(bodyParser.json());
 
 // 6. Request Rate Limiting
 
-// const limiter = rateLimit({
+const limiter = rateLimit({
 
-//     windowMs: 15 * 60 * 1000, // 15 minutes
-//     max: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes)
 
 
-// })
+})
 
-// app.use(limiter);
+app.use(limiter);
 
 
 let OPTION = { autoIndex: true };
@@ -84,7 +84,7 @@ mongoose.connect(process.env.DATABASE_URI, OPTION)
 
 const baseUrl = process.env.BASE_URL
 
-app.use(`${baseUrl}/urlss`, urlsApi); // .env ar kono kiso path ar modddhe set korte hore aivabe set korte hobe
+app.use(`${baseUrl}/urlss`, urlsApi); 
 
 
 
